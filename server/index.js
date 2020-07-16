@@ -25,8 +25,8 @@ app.get("/accesstoken", (req, res) => {
 	})
 		.then((res) => res.json())
 		.then((data) => {
-			console.log("Data from API", data);
-			res.json(data.access_token);
+			const accessToken = { accessToken: data.access_token };
+			res.send(accessToken);
 		})
 		.catch((e) => console.log(e));
 });
