@@ -16,22 +16,23 @@ import CardbacksView from "./modules/cardbacks/Cardbacks.view";
 
 const App = ({ accessToken, fetchAccessToken, metaData, fetchMetaData }) => {
 	React.useEffect(() => {
-		console.log(metaData);
 		const fetchData = async () => {
 			if (!accessToken) {
 				await fetchAccessToken();
 			}
 			if (
 				Object.keys(metaData).length === 0 &&
-				metaData.constructor === Object
+				metaData.constructor === Object &&
+				accessToken
 			) {
-				console.log("Calling fetch with", accessToken);
+				console.log("trying");
+				console.log(accessToken);
 				await fetchMetaData(accessToken);
 			}
 		};
 
 		fetchData();
-	});
+	}, [accessToken]);
 
 	return (
 		<>

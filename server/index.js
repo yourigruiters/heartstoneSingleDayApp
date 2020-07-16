@@ -10,7 +10,7 @@ const clientDetails = require("./credentials");
 
 app.use(bodyParser.json());
 
-// Get access token
+// [WORKING] Get access token
 app.get("/accesstoken", (req, res) => {
 	const URL = `https://eu.battle.net/oauth/token?client_id=${clientDetails.clientId}&client_secret=${clientDetails.clientSecret}`;
 
@@ -28,7 +28,7 @@ app.get("/accesstoken", (req, res) => {
 			const accessToken = { accessToken: data.access_token };
 			res.send(accessToken);
 		})
-		.catch((e) => console.log("ERROR IN BACKEND", e));
+		.catch((e) => console.error("ERROR IN BACKEND", e));
 });
 
 // ALL DATA - Can be more specific
@@ -42,42 +42,36 @@ app.get("/api/cardsdata", (req, res) => {
 			console.log("Data from API", data);
 			res.send(data);
 		})
-		.catch((e) => console.log("ERROR IN BACKEND", e));
+		.catch((e) => console.error("ERROR IN BACKEND", e));
 });
 
-// ALL DATA
+// [WORKING] ALL DATA
 app.get("/api/metadata/:accessToken", (req, res) => {
-	console.log(req.params);
+	console.log("wollah", req.params);
 	const accessToken = req.params.accessToken;
 	const URL = `https://eu.api.blizzard.com/hearthstone/metadata?locale=en_US&access_token=${accessToken}`;
-	console.log("Hallo");
+
 	fetch(URL)
 		.then((res) => res.json())
-		.then((data) => {
-			console.log("METADATA FROM BACKEND", data);
-			res.send(data);
-		})
-		.catch((e) => console.log("ERROR IN BACKEND", e));
+		.then((data) => res.send(data))
+		.catch((e) => console.error("ERROR IN BACKEND", e));
 });
 
-// SPECIFY DECK CODE
+// [WORKING] SPECIFY DECK CODE
 app.get("/api/deck/:id/:accessToken", (req, res) => {
-	console.log("PARAMS", req.params);
 	const accessToken = req.params.accessToken;
 	const deckId = req.params.id;
 	const URL = `https://eu.api.blizzard.com/hearthstone/deck/${deckId}?locale=en_US&access_token=${accessToken}`;
 
 	fetch(URL)
 		.then((res) => res.json())
-		.then((data) => {
-			res.send(data);
-		})
-		.catch((e) => console.log("ERROR IN BACKEND", e));
+		.then((data) => res.send(data))
+		.catch((e) => console.error("ERROR IN BACKEND", e));
 });
 
-// carcbacks - can specify one
-app.get("/api/cardbacks", (req, res) => {
-	const accessToken = req.body.accessToken;
+// cardbacks
+app.get("/api/cardbacks/:accessToken", (req, res) => {
+	const accessToken = req.params.accessToken;
 	const URL = `https://eu.api.blizzard.com/hearthstone/cardbacks?access_token=${accessToken}`;
 
 	fetch(URL)
@@ -86,7 +80,7 @@ app.get("/api/cardbacks", (req, res) => {
 			console.log("Data from API", data);
 			res.send(data);
 		})
-		.catch((e) => console.log("ERROR IN BACKEND", e));
+		.catch((e) => console.error("ERROR IN BACKEND", e));
 });
 
 app.listen(port, () =>
