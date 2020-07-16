@@ -10,6 +10,11 @@
 		img {
 			width: 80px;
 			height: 80px;
+			transition: all 0.5s;
+		}
+
+		&:hover img {
+			transform: scale(1.2);
 		}
 	}
 

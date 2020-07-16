@@ -1,10 +1,23 @@
 import React from "react";
 import * as _ from "lodash";
 import "./Card.scss";
+import { connect } from "react-redux";
 
-const Card = ({ card, page }) => {
-	console.log(card);
+const Card = ({ card, page, metaData }) => {
 	const keywords = _.get(card, "keywordIds", []);
+	const keywordsDescription = _.get(metaData, "keywords", []);
+
+	const foundKeywords = keywords.map((keyword) => {
+		const result = keywordsDescription.find(
+			(keywordId) => keywordId.id === keyword
+		);
+
+		if (result && result !== undefined) {
+			return result;
+		}
+		return;
+	});
+
 	return (
 		<section className="card">
 			<img src={card.image} alt="card" />
@@ -15,14 +28,25 @@ const Card = ({ card, page }) => {
 			) : (
 				<section className="card__overlay">
 					<article className="card__overlay__box">{card.flavorText}</article>
-					{keywords.map((keyword) => {
-						console.log(keyword);
-						return <article className="card__overlay__box">123456</article>;
-					})}
+					{foundKeywords &&
+						foundKeywords[0] !== undefined &&
+						foundKeywords.map((foundKeyword, index) => {
+							if (foundKeyword !== undefined) {
+								return (
+									<article className="card__overlay__box" key={index}>
+										{foundKeyword.refText}
+									</article>
+								);
+							}
+						})}
 				</section>
 			)}
 		</section>
 	);
 };
 
-export default Card;
+const mapStateToProps = (state) => ({
+	metaData: state.metadataReducer,
+});
+
+export default connect(mapStateToProps)(Card);

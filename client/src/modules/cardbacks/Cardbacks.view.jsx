@@ -3,6 +3,7 @@ import Smallbanner from "../../components/smallbanner/Smallbanner";
 import "./Cardbacks.view.scss";
 import Carddisplay from "../../components/carddisplay/Carddisplay";
 import { connect } from "react-redux";
+import Container from "../../components/container/Container";
 
 const CardbacksView = ({ match, accessToken }) => {
 	const [cardsData, setCardsData] = React.useState([]);
@@ -30,6 +31,16 @@ const CardbacksView = ({ match, accessToken }) => {
 	return (
 		<section className="cardbacks">
 			<Smallbanner title={"fourth"} />
+			<Container>
+				<article className="cardbacks__content">
+					<h1>Cardbacks</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, et
+						nulla rerum beatae quis quod, architecto eius eaque unde
+						reprehenderit, repellat laboriosam ipsum dignissimos quisquam?
+					</p>
+				</article>
+			</Container>
 			<Carddisplay cards={cardsData} page="cardbacks" />
 		</section>
 	);

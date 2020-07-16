@@ -57,7 +57,7 @@ const Decktracker = ({
 									title="Example deck"
 									onClick={() =>
 										onSubmit(
-											"AAECAea5AwLMugPaxgMOlga8pwP9pwP5rgOLugPgvAPXvgPevgO6xgPZxgPVyAP3yAP5yAP+yAMA"
+											"AAEBAf0EHooByQOrBMUEywThB+wHjQi+7ALO7wLu9gLG+AKggAPoiQODlgOfmwOgmwOKngP8owOLpAOSpAPypQOEpwP6rAPwrwORsQOEtgOMtgPhtgOftwMAAA=="
 										)
 									}
 								/>

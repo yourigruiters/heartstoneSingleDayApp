@@ -25,8 +25,6 @@ const App = ({ accessToken, fetchAccessToken, metaData, fetchMetaData }) => {
 				metaData.constructor === Object &&
 				accessToken
 			) {
-				console.log("trying");
-				console.log(accessToken);
 				await fetchMetaData(accessToken);
 			}
 		};
