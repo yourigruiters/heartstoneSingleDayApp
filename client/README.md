@@ -1,3 +1,3 @@
-## Heartstone React Front-end
+## Hearthstone React Front-end
 
 Awaiting documentation...

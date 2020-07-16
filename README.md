@@ -1,2 +1,3 @@
-# heartstoneSingleDayApp
-heartstone API single day full-stack application for Salt
+# HearthstoneSingleDayApp
+
+Hearthstone API single day full-stack application for Salt

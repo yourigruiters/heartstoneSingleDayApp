@@ -7,7 +7,7 @@ const Banner = () => {
 		<section className="banner">
 			<Container>
 				<section className="banner__content">
-					<h1>Heartstone Tracker</h1>
+					<h1>Hearthstone Tracker</h1>
 					<p>
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde,
 						fuga? Sapiente, eligendi illum dolor est sit?

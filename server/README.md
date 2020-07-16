@@ -1,3 +1,3 @@
-## Heartstone Express Back-end
+## Hearthstone Express Back-end
 
 Awaiting documentation...

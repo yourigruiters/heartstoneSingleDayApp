@@ -14,7 +14,7 @@ const HomepageView = (props) => {
 	const informationData = [
 		{
 			id: 0,
-			title: "Heartstone Heroes",
+			title: "Hearthstone Heroes",
 			description:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam fugiat explicabo aspernatur inventore esse ipsum voluptatem quaerat culpa minima possimus, deserunt sed a dicta, consectetur maiores dolorem ut pariatur distinctio rerum eum ipsam? Sequi, fugiat. Ipsam ut enim repellat, sed, consectetur dicta provident, fuga natus necessitatibus obcaecati!",
 			button: "View heroes",

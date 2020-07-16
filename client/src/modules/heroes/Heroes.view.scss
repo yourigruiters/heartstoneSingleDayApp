@@ -1,4 +1,31 @@
 @import "../../styles/variables.scss";
 
 .heroes {
+	&__content {
+		width: 100%;
+		max-width: 600px;
+		height: auto;
+		margin: auto;
+		margin-top: 30px;
+		text-align: center;
+
+		h2 {
+			$font-family: $font-source;
+			font-weight: bold;
+			font-size: 40px;
+			line-height: 60px;
+			color: $font-dark;
+			margin-bottom: 15px;
+			text-shadow: 1px 3px 5px #513824;
+		}
+
+		p {
+			$font-family: $font-source;
+			max-width: 600px;
+			font-size: 18px;
+			line-height: 24px;
+			color: $black;
+			margin-bottom: 15px;
+		}
+	}
 }

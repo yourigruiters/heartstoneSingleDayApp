@@ -5,13 +5,13 @@ import Carddisplay from "../../components/carddisplay/Carddisplay";
 import { connect } from "react-redux";
 import Container from "../../components/container/Container";
 
-const CardbacksView = ({ match, accessToken }) => {
+const CardbacksView = ({ accessToken }) => {
 	const [cardsData, setCardsData] = React.useState([]);
 	const [error, setError] = React.useState(false);
 
 	React.useEffect(() => {
 		getCardbacks();
-	}, []);
+	}, [accessToken]);
 
 	const getCardbacks = async () => {
 		await fetch(`/api/cardbacks/${accessToken}`, {})
@@ -33,11 +33,11 @@ const CardbacksView = ({ match, accessToken }) => {
 			<Smallbanner title={"fourth"} />
 			<Container>
 				<article className="cardbacks__content">
-					<h1>Cardbacks</h1>
+					<h2>Cardbacks</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, et
 						nulla rerum beatae quis quod, architecto eius eaque unde
-						reprehenderit, repellat laboriosam ipsum dignissimos quisquam?
+						reprehenderit, repellat laboriosam ipsum dignissimos quisquam.
 					</p>
 				</article>
 			</Container>

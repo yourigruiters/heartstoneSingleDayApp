@@ -10,7 +10,7 @@ const CardsView = ({ accessToken }) => {
 
 	React.useEffect(() => {
 		getCardbacks();
-	}, []);
+	}, [accessToken]);
 
 	const getCardbacks = async () => {
 		await fetch(`/api/cardsdata/${accessToken}`, {})

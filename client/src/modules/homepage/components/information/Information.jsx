@@ -30,7 +30,7 @@ const Information = ({ information }) => {
 								"information__content__content--order": !information.order,
 							})}
 						>
-							<h1>{information.title}</h1>
+							<h3>{information.title}</h3>
 							<p>{information.description}</p>
 							<Link to={!information.id ? "/heroes" : "/cards"}>
 								<Button content={information.button} type="brown" />

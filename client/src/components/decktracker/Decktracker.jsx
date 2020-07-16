@@ -18,7 +18,7 @@ const Decktracker = ({
 			<Container>
 				<section className="decktracker__content">
 					<article className="decktracker__content__content">
-						<h1>Decktracker</h1>
+						<h2>Decktracker</h2>
 						<p>Have a deck code? Paste it here and view your cards!</p>
 					</article>
 					{error && (

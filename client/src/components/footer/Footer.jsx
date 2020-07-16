@@ -8,7 +8,7 @@ const Footer = () => {
 			<Container>
 				<section className="footer__content">
 					<article className="footer__content__text">
-						<p>© Heartstone | Salt</p>
+						<p>© Hearthstone | Salt</p>
 					</article>
 					<article className="footer__content__text">
 						<p className="footer__content__text--right">
