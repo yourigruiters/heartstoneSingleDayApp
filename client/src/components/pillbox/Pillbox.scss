@@ -4,6 +4,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 	padding: 4px 11px;
 	border-radius: 6px;
 	border: 1px solid $white;
@@ -15,11 +16,15 @@
 
 	&:hover {
 		background-color: $white;
-		color: $black;
+	}
+
+	&:hover p {
+		color: $black !important;
 	}
 
 	p {
 		$font-family: $font-roboto;
 		font-size: 14px;
+		transition: all 0.5s;
 	}
 }

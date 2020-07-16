@@ -28,7 +28,7 @@ app.get("/accesstoken", (req, res) => {
 			const accessToken = { accessToken: data.access_token };
 			res.send(accessToken);
 		})
-		.catch((e) => console.log(e));
+		.catch((e) => console.log("ERROR IN BACKEND", e));
 });
 
 // ALL DATA - Can be more specific
@@ -42,7 +42,7 @@ app.get("/api/cardsdata", (req, res) => {
 			console.log("Data from API", data);
 			res.send(data);
 		})
-		.catch((e) => console.log(e));
+		.catch((e) => console.log("ERROR IN BACKEND", e));
 });
 
 // ALL DATA
@@ -56,13 +56,15 @@ app.get("/api/metadeta", (req, res) => {
 			console.log("Data from API", data);
 			res.send(data);
 		})
-		.catch((e) => console.log(e));
+		.catch((e) => console.log("ERROR IN BACKEND", e));
 });
 
 // SPECIFY DECK CODE
-app.get("/api/deck", (req, res) => {
-	const accessToken = req.body.accessToken;
-	const URL = `https://eu.api.blizzard.com/hearthstone/deck/AAECAQcG%2Bwyd8AKS%2BAKggAOblAPanQMMS6IE%2Fweb8wLR9QKD%2BwKe%2BwKz%2FAL1gAOXlAOalAOSnwMA?locale=en_US&access_token=${accessToken}`;
+app.get("/api/deck/:id/:accessToken", (req, res) => {
+	console.log("PARAMS", req.params);
+	const accessToken = req.params.accessToken;
+	const deckId = req.params.id;
+	const URL = `https://eu.api.blizzard.com/hearthstone/deck/${deckId}?locale=en_US&access_token=${accessToken}`;
 
 	fetch(URL)
 		.then((res) => res.json())
@@ -70,7 +72,7 @@ app.get("/api/deck", (req, res) => {
 			console.log("Data from API", data);
 			res.send(data);
 		})
-		.catch((e) => console.log(e));
+		.catch((e) => console.log("ERROR IN BACKEND", e));
 });
 
 // carcbacks - can specify one
@@ -84,7 +86,7 @@ app.get("/api/cardbacks", (req, res) => {
 			console.log("Data from API", data);
 			res.send(data);
 		})
-		.catch((e) => console.log(e));
+		.catch((e) => console.log("ERROR IN BACKEND", e));
 });
 
 app.listen(port, () =>

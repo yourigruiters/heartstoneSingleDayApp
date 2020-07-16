@@ -4,7 +4,13 @@ import "./Decktracker.scss";
 import Button from "../button/Button";
 import Pillbox from "../pillbox/Pillbox";
 
-const Decktracker = ({ inputValue, onChange, onSubmit, page = "" }) => {
+const Decktracker = ({
+	inputValue,
+	onChange,
+	onSubmit,
+	page = "",
+	error = false,
+}) => {
 	const loggedIn = !true;
 
 	return (
@@ -15,13 +21,20 @@ const Decktracker = ({ inputValue, onChange, onSubmit, page = "" }) => {
 						<h1>Decktracker</h1>
 						<p>Have a deck code? Paste it here and view your cards!</p>
 					</article>
+					{error && (
+						<article className="decktracker__error">
+							<p className="decktracker__error__message">
+								The provided deck code does not exist.
+							</p>
+						</article>
+					)}
 					<article className="decktracker__content__form">
 						<input
 							type="text"
 							value={inputValue}
 							onChange={(e) => onChange(e.target.value)}
 						/>
-						<Button content="Submit" type="yellow" onClick={() => onSubmit()} />
+						<Button content="Track" type="yellow" onClick={() => onSubmit()} />
 					</article>
 				</section>
 				{page === "decktracker" && (
@@ -38,8 +51,16 @@ const Decktracker = ({ inputValue, onChange, onSubmit, page = "" }) => {
 							<article className="decktracker__options__title">
 								<p>
 									- <span>Login</span> to your account to keep track of your
-									decks
+									decks.
 								</p>
+								<Pillbox
+									title="Example deck"
+									onClick={() =>
+										onSubmit(
+											"AAECAea5AwLMugPaxgMOlga8pwP9pwP5rgOLugPgvAPXvgPevgO6xgPZxgPVyAP3yAP5yAP+yAMA"
+										)
+									}
+								/>
 							</article>
 						)}
 					</section>

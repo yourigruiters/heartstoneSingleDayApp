@@ -28,7 +28,7 @@ const App = ({ accessToken, fetchAccessToken }) => {
 					<Route path="/" exact component={HomepageView} />
 					<Route path="/heroes" exact component={HeroesView} />
 					<Route path="/cards" exact component={CardsView} />
-					<Route path="/decktracker" exact component={DecktrackerView} />
+					<Route path="/decktracker/:id?" component={DecktrackerView} />
 				</Switch>
 			</main>
 			<Footer />

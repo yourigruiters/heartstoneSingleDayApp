@@ -5,10 +5,10 @@ import Bannermodes from "./components/bannermodes/Bannermodes";
 import Information from "./components/information/Information";
 import Decktracker from "../../components/decktracker/Decktracker";
 
-const HomepageView = () => {
+const HomepageView = (props) => {
 	const [inputValue, setInputValue] = React.useState("");
 	const onSubmit = () => {
-		console.log("Haha");
+		props.history.push(`/decktracker/${inputValue}`);
 	};
 
 	const informationData = [
@@ -16,7 +16,7 @@ const HomepageView = () => {
 			id: 0,
 			title: "Heartstone Heroes",
 			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam fugiat explicabo aspernatur inventore esse ipsum voluptatem quaerat culpa minima possimus, deserunt sed a dicta, consectetur maiores dolorem ut pariatur distinctio rerum eum ipsam? Sequi, fugiat. Ipsam ut enim repellat, sed, consectetur dicta provident, fuga natus necessitatibus obcaecati animi quasi!",
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam fugiat explicabo aspernatur inventore esse ipsum voluptatem quaerat culpa minima possimus, deserunt sed a dicta, consectetur maiores dolorem ut pariatur distinctio rerum eum ipsam? Sequi, fugiat. Ipsam ut enim repellat, sed, consectetur dicta provident, fuga natus necessitatibus obcaecati!",
 			button: "See all heroes",
 			order: true,
 		},
@@ -24,7 +24,7 @@ const HomepageView = () => {
 			id: 1,
 			title: "Cards and tracker",
 			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam fugiat explicabo aspernatur inventore esse ipsum voluptatem quaerat culpa minima possimus, deserunt sed a dicta, consectetur maiores dolorem ut pariatur distinctio rerum eum ipsam? Sequi, fugiat. Ipsam ut enim repellat, sed, consectetur dicta provident, fuga natus necessitatibus obcaecati animi quasi!",
+				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam fugiat explicabo aspernatur inventore esse ipsum voluptatem quaerat culpa minima possimus, deserunt sed a dicta, consectetur maiores dolorem ut pariatur distinctio rerum eum ipsam? Sequi, fugiat. Ipsam ut enim repellat, sed, consectetur dicta provident, fuga natus necessitatibus obcaecati!",
 			button: "See all cards",
 			order: false,
 		},

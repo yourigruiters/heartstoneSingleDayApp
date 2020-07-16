@@ -11,7 +11,6 @@ const Information = ({ information }) => {
 	const getImage = (index) => {
 		switch (index) {
 			case 0:
-				console.log("this one");
 				return homepage1;
 			case 1:
 				return homepage1;
