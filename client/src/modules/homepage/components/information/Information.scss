@@ -1,0 +1,75 @@
+@import "../../../../styles/variables.scss";
+
+.information {
+	display: flex;
+	width: 100%;
+	height: auto;
+	margin: 120px auto;
+	padding: 50px 0px;
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		height: auto;
+
+		&__image {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			width: 400px;
+
+			img {
+				position: absolute;
+				top: -50px;
+				width: 550px;
+			}
+		}
+
+		&__content {
+			width: 100%;
+			max-width: 700px;
+
+			&--order {
+				order: 2;
+				text-align: right;
+
+				p {
+					margin-left: auto;
+				}
+			}
+
+			h1 {
+				$font-family: $font-source;
+				font-weight: bold;
+				font-size: 40px;
+				line-height: 60px;
+				color: $font-dark;
+				margin-bottom: 15px;
+			}
+
+			p {
+				$font-family: $font-source;
+				max-width: 600px;
+				font-size: 18px;
+				line-height: 24px;
+				color: $black;
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+.divider {
+	display: flex;
+	width: 100%;
+	height: auto;
+	margin: 100px auto;
+
+	&__line {
+		width: 80%;
+		height: 1px;
+		margin: auto;
+		background-color: $light-brown;
+	}
+}

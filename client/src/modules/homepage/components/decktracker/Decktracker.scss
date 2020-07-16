@@ -1,0 +1,39 @@
+@import "../../../../styles/variables.scss";
+
+.decktracker {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	padding: 20px 0px;
+	background-color: #0c1417;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		height: auto;
+
+		&__content {
+			text-align: center;
+			margin-bottom: 20px;
+
+			h1 {
+				$font-family: $font-source;
+				font-weight: bold;
+				font-size: 40px;
+				line-height: 40px;
+				color: $yellow;
+				margin-bottom: 10px;
+			}
+
+			p {
+				$font-family: $font-source;
+				font-size: 16px;
+				line-height: 20px;
+				color: $white;
+			}
+		}
+	}
+}

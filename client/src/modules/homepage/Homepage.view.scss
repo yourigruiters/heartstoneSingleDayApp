@@ -1,4 +1,11 @@
 @import "../../styles/variables.scss";
 
 .homepage {
+	width: 100%;
+	height: auto;
+
+	&__information {
+		border-top: 5px solid $light-brown;
+		border-bottom: 5px solid $light-brown;
+	}
 }

@@ -10,11 +10,11 @@ const Footer = () => {
 					<article className="footer__content__text">
 						<p>© Heartstone | Salt</p>
 					</article>
-					<artcle className="footer__content__text">
+					<article className="footer__content__text">
 						<p className="footer__content__text--right">
 							Created by Youri Gruiters
 						</p>
-					</artcle>
+					</article>
 				</section>
 			</Container>
 		</footer>
