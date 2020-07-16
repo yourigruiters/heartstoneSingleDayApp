@@ -4,6 +4,7 @@ import "./Cardbacks.view.scss";
 import Carddisplay from "../../components/carddisplay/Carddisplay";
 import { connect } from "react-redux";
 import Container from "../../components/container/Container";
+import Divider from "../../components/divider/Divider";
 
 const CardbacksView = ({ accessToken }) => {
 	const [cardsData, setCardsData] = React.useState([]);
@@ -35,11 +36,12 @@ const CardbacksView = ({ accessToken }) => {
 				<article className="cardbacks__content">
 					<h2>Cardbacks</h2>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, et
-						nulla rerum beatae quis quod, architecto eius eaque unde
-						reprehenderit, repellat laboriosam ipsum dignissimos quisquam.
+						Below you can find all cardbacks that have been in play since the
+						start of Hearthstone. Hovering over a cardback will provide you with
+						the description of the respective cardback.
 					</p>
 				</article>
+				<Divider />
 			</Container>
 			<Carddisplay cards={cardsData} page="cardbacks" />
 		</section>

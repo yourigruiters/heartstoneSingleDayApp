@@ -17,7 +17,7 @@ const Card = ({ card, page, metaData }) => {
 		}
 		return;
 	});
-
+	console.log(foundKeywords);
 	return (
 		<section className="card">
 			<img src={card.image} alt="card" />
@@ -33,7 +33,11 @@ const Card = ({ card, page, metaData }) => {
 						foundKeywords.map((foundKeyword, index) => {
 							if (foundKeyword !== undefined) {
 								return (
-									<article className="card__overlay__box" key={index}>
+									<article
+										className="card__overlay__box card__overlay__box--ability"
+										key={index}
+									>
+										<span>{foundKeyword.name}: </span>
 										{foundKeyword.refText}
 									</article>
 								);

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import * as _ from "lodash";
 import Container from "../../components/container/Container";
 import Heroesdisplay from "../../components/heroesdisplay/Heroesdisplay";
+import Divider from "../../components/divider/Divider";
 
 const HeroesView = ({ metaData }) => {
 	const heroes = _.get(metaData, "classes", []);
@@ -16,11 +17,12 @@ const HeroesView = ({ metaData }) => {
 				<article className="heroes__content">
 					<h2>Heroes</h2>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, et
-						nulla rerum beatae quis quod, architecto eius eaque unde
-						reprehenderit, repellat laboriosam ipsum dignissimos quisquam.
+						Below you can find the active heroes available in Hearthstone,
+						attached to their image is the name and the default ability of the
+						hero. Try hovering over one for a special effect!
 					</p>
 				</article>
+				<Divider />
 			</Container>
 			<Heroesdisplay heroes={heroes} />
 		</section>

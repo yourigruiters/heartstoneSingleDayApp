@@ -16,7 +16,7 @@ const HomepageView = (props) => {
 			id: 0,
 			title: "Hearthstone Heroes",
 			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam fugiat explicabo aspernatur inventore esse ipsum voluptatem quaerat culpa minima possimus, deserunt sed a dicta, consectetur maiores dolorem ut pariatur distinctio rerum eum ipsam? Sequi, fugiat. Ipsam ut enim repellat, sed, consectetur dicta provident, fuga natus necessitatibus obcaecati!",
+				"Want to find more details regarding the heroes available to you in Hearthstone? Navigate to the heroes page and see what heroes and abilities are open for your needs! More information about these heroes can be found on the official Hearthstone website.",
 			button: "View heroes",
 			order: true,
 		},
@@ -24,7 +24,7 @@ const HomepageView = (props) => {
 			id: 1,
 			title: "Cards and cardbacks",
 			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam fugiat explicabo aspernatur inventore esse ipsum voluptatem quaerat culpa minima possimus, deserunt sed a dicta, consectetur maiores dolorem ut pariatur distinctio rerum eum ipsam? Sequi, fugiat. Ipsam ut enim repellat, sed, consectetur dicta provident, fuga natus necessitatibus obcaecati!",
+				"We provide you with access to all the cards and cardbacks currently used in the Hearthstone game. The cardbacks provide you with an extra view of their description and the playing cards can be filtered in a lot of different ways to provide the correct view.",
 			button: "View cards",
 			button2: "View cardbacks",
 			order: false,

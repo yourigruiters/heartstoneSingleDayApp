@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 import homepage1 from "../../../../utils/images/homepage/information1.png";
 import homepage2 from "../../../../utils/images/homepage/information2.png";
+import Divider from "../../../../components/divider/Divider";
 
 const Information = ({ information }) => {
 	const getImage = (index) => {
@@ -47,13 +48,7 @@ const Information = ({ information }) => {
 					</section>
 				</Container>
 			</section>
-			{!information.id && (
-				<section className="divider">
-					<Container>
-						<article className="divider__line"></article>
-					</Container>
-				</section>
-			)}
+			{!information.id && <Divider />}
 		</>
 	);
 };

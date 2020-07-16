@@ -38,12 +38,20 @@
 
 		&__box {
 			padding: 10px;
-			background-color: #513824c4;
+			background-color: #513824db;
 			border: 3px solid #1b0e08;
 			border-radius: 5px;
 			color: $yellow;
 			font-size: 14px;
 			margin-bottom: 25px;
+
+			&--ability {
+				background-color: #9e2a00cc;
+			}
+
+			span {
+				font-weight: bold;
+			}
 		}
 
 		&__box:last-child {
