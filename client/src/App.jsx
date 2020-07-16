@@ -12,6 +12,7 @@ import HeroesView from "./modules/heroes/Heroes.view";
 import CardsView from "./modules/cards/Cards.view";
 import DecktrackerView from "./modules/decktracker/Decktracker.view";
 import { fetchAccessToken, fetchMetaData } from "./redux/actions/index";
+import CardbacksView from "./modules/cardbacks/Cardbacks.view";
 
 const App = ({ accessToken, fetchAccessToken, metaData, fetchMetaData }) => {
 	React.useEffect(() => {
@@ -40,6 +41,7 @@ const App = ({ accessToken, fetchAccessToken, metaData, fetchMetaData }) => {
 					<Route path="/" exact component={HomepageView} />
 					<Route path="/heroes" exact component={HeroesView} />
 					<Route path="/cards" exact component={CardsView} />
+					<Route path="/cardbacks" exact component={CardbacksView} />
 					<Route path="/decktracker/:id?" component={DecktrackerView} />
 				</Switch>
 			</main>

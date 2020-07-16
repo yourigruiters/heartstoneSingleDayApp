@@ -34,6 +34,11 @@ const Information = ({ information }) => {
 							<Link to={!information.id ? "/heroes" : "/cards"}>
 								<Button content={information.button} type="brown" />
 							</Link>
+							{information.button2 && (
+								<Link to="/cardbacks">
+									<Button content={information.button2} type="brown" />
+								</Link>
+							)}
 						</article>
 						<article className="information__content__image">
 							<img src={getImage(information.id)} alt="information" />

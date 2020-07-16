@@ -17,15 +17,16 @@ const HomepageView = (props) => {
 			title: "Heartstone Heroes",
 			description:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam fugiat explicabo aspernatur inventore esse ipsum voluptatem quaerat culpa minima possimus, deserunt sed a dicta, consectetur maiores dolorem ut pariatur distinctio rerum eum ipsam? Sequi, fugiat. Ipsam ut enim repellat, sed, consectetur dicta provident, fuga natus necessitatibus obcaecati!",
-			button: "See all heroes",
+			button: "View heroes",
 			order: true,
 		},
 		{
 			id: 1,
-			title: "Cards and tracker",
+			title: "Cards and cardbacks",
 			description:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam fugiat explicabo aspernatur inventore esse ipsum voluptatem quaerat culpa minima possimus, deserunt sed a dicta, consectetur maiores dolorem ut pariatur distinctio rerum eum ipsam? Sequi, fugiat. Ipsam ut enim repellat, sed, consectetur dicta provident, fuga natus necessitatibus obcaecati!",
-			button: "See all cards",
+			button: "View cards",
+			button2: "View cardbacks",
 			order: false,
 		},
 	];

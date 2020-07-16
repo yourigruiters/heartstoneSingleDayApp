@@ -16,6 +16,9 @@ const Navbar = () => {
 					<NavLink to="/cards" exact>
 						<li>Cards</li>
 					</NavLink>
+					<NavLink to="/cardbacks" exact>
+						<li>Cardbacks</li>
+					</NavLink>
 					<NavLink to="/decktracker" exact>
 						<li>Decktracker</li>
 					</NavLink>
