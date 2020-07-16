@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Container from "../container/Container";
 import logo from "../../utils/images/logo/hearstone.png";
 import Navbar from "./components/navbar/Navbar";
