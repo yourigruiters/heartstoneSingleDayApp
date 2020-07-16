@@ -1,0 +1,30 @@
+@import "../../../../styles/variables.scss";
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__navlinks {
+		ul {
+			display: flex;
+			list-style-type: none;
+
+			li {
+				font-size: 18px;
+				font-family: $font-source;
+				font-weight: bold;
+				letter-spacing: 0.5px;
+				color: $white;
+				padding: 10px;
+			}
+		}
+
+		.active li {
+			color: $yellow;
+		}
+	}
+
+	&__login {
+	}
+}

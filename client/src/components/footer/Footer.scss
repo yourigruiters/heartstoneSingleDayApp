@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+
+.footer {
+	width: 100%;
+	height: auto;
+	padding: 8px;
+	color: $white;
+	background-color: $dark-brown;
+	border-top: 2px solid $light-brown;
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+
+		&__text {
+			font-size: 14px;
+
+			&--right {
+				text-align: right;
+			}
+		}
+	}
+}
