@@ -19,7 +19,7 @@ const Navbar = () => {
 					<NavLink to="/cardbacks" exact>
 						<li>Cardbacks</li>
 					</NavLink>
-					<NavLink to="/decktracker" exact>
+					<NavLink to="/decktracker">
 						<li>Decktracker</li>
 					</NavLink>
 				</ul>

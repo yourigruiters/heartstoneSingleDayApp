@@ -1,0 +1,53 @@
+@import "../../../../styles/variables.scss";
+
+.card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 250px;
+	margin: 15px 0px;
+
+	img {
+		position: relative;
+		width: 90%;
+		cursor: pointer;
+		transition: transform 0.5s;
+	}
+
+	&:hover img {
+		z-index: 2;
+		transform: scale(1.2);
+	}
+
+	&:hover &__overlay {
+		display: block;
+	}
+
+	&__overlay {
+		display: none;
+		position: absolute;
+		z-index: 2;
+		left: 100%;
+		width: 250px;
+		height: auto;
+
+		&:hover {
+			display: none !important;
+		}
+
+		&__box {
+			padding: 10px;
+			background-color: #513824c4;
+			border: 3px solid #1b0e08;
+			border-radius: 5px;
+			color: $yellow;
+			font-size: 14px;
+			margin-bottom: 25px;
+		}
+
+		&__box:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}

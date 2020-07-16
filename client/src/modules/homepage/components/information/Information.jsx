@@ -6,6 +6,7 @@ import Button from "../../../../components/button/Button";
 import { Link } from "react-router-dom";
 
 import homepage1 from "../../../../utils/images/homepage/information1.png";
+import homepage2 from "../../../../utils/images/homepage/information2.png";
 
 const Information = ({ information }) => {
 	const getImage = (index) => {
@@ -13,7 +14,7 @@ const Information = ({ information }) => {
 			case 0:
 				return homepage1;
 			case 1:
-				return homepage1;
+				return homepage2;
 			default:
 				return "";
 		}

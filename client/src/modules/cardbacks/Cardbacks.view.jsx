@@ -19,7 +19,7 @@ const CardbacksView = ({ match, accessToken }) => {
 				setError(false);
 				setCardsData(data.cardBacks);
 			})
-			.catch((error) => {
+			.catch(() => {
 				setError(true);
 				setCardsData([]);
 			});
@@ -30,7 +30,7 @@ const CardbacksView = ({ match, accessToken }) => {
 	return (
 		<section className="cardbacks">
 			<Smallbanner title={"fourth"} />
-			<Carddisplay cards={cardsData} />
+			<Carddisplay cards={cardsData} page="cardbacks" />
 		</section>
 	);
 };

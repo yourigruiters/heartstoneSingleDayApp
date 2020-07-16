@@ -25,8 +25,6 @@ const DecktrackerView = ({ match, accessToken }) => {
 		if (deckId) {
 			getCards(deckId);
 		}
-
-		return;
 	}, []);
 
 	const getCards = async (deckId) => {
