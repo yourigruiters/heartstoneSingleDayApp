@@ -11,18 +11,16 @@ import HeroesView from "./modules/heroes/Heroes.view";
 import CardsView from "./modules/cards/Cards.view";
 import DecktrackerView from "./modules/decktracker/Decktracker.view";
 
-function App() {
+const App = () => {
 	// const [dataFromBackend, setDataFromBackend] = React.useState({});
-	// const [isLoading, setIsLoading] = React.useState(true);
 
 	// // ComponentDidMount
 	// React.useEffect(() => {
 	// 	const fetchData = async () => {
-	// 		await fetch("/setup")
+	// 		await fetch("/accesstoken")
 	// 			.then((res) => res.json())
 	// 			.then((data) => {
 	// 				setDataFromBackend(data);
-	// 				setIsLoading(false);
 	// 			})
 	// 			.catch((e) => console.error(e));
 	// 	};
@@ -30,15 +28,6 @@ function App() {
 	// }, []);
 
 	return (
-		// <div className="App">
-		// 	{isLoading ? (
-		// 		<div>...isLoading...</div>
-		// 	) : (
-		// 		<>
-		// 			<h1>{dataFromBackend.name}</h1>
-		// 		</>
-		// 	)}
-		// </div>
 		<>
 			<Header />
 			<main>
@@ -52,6 +41,6 @@ function App() {
 			<Footer />
 		</>
 	);
-}
+};
 
 export default App;
