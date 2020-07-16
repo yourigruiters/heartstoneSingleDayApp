@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "../../../../components/container/Container";
 import "./Banner.scss";
-import Button from "../../../../components/button/Button";
 
 const Banner = () => {
 	return (
@@ -13,7 +12,6 @@ const Banner = () => {
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde,
 						fuga? Sapiente, eligendi illum dolor est sit?
 					</p>
-					<Button content="hit me!" />
 				</section>
 			</Container>
 		</section>

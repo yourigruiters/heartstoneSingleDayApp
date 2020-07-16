@@ -3,6 +3,7 @@ import Container from "../../../../components/container/Container";
 import cn from "classnames";
 import "./Information.scss";
 import Button from "../../../../components/button/Button";
+import { Link } from "react-router-dom";
 
 import homepage1 from "../../../../utils/images/homepage/information1.png";
 
@@ -31,7 +32,9 @@ const Information = ({ information }) => {
 						>
 							<h1>{information.title}</h1>
 							<p>{information.description}</p>
-							<Button content="hit me!" />
+							<Link to={!information.id ? "/heroes" : "/cards"}>
+								<Button content={information.button} type="brown" />
+							</Link>
 						</article>
 						<article className="information__content__image">
 							<img src={getImage(information.id)} alt="information" />

@@ -8,6 +8,12 @@
 	font-weight: lighter;
 }
 
+*:focus {
+	outline: none;
+	border: none;
+	outline-offset: 0px;
+}
+
 body {
 	background-color: $brown;
 }
