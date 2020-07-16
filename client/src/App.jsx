@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
 
 import "./App.scss";
 
@@ -10,22 +11,14 @@ import HomepageView from "./modules/homepage/Homepage.view";
 import HeroesView from "./modules/heroes/Heroes.view";
 import CardsView from "./modules/cards/Cards.view";
 import DecktrackerView from "./modules/decktracker/Decktracker.view";
+import { fetchAccessToken } from "./redux/actions";
 
-const App = () => {
-	// const [dataFromBackend, setDataFromBackend] = React.useState({});
-
-	// // ComponentDidMount
-	// React.useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		await fetch("/accesstoken")
-	// 			.then((res) => res.json())
-	// 			.then((data) => {
-	// 				setDataFromBackend(data);
-	// 			})
-	// 			.catch((e) => console.error(e));
-	// 	};
-	// 	fetchData();
-	// }, []);
+const App = ({ accessToken, fetchAccessToken }) => {
+	React.useEffect(() => {
+		if (!accessToken) {
+			fetchAccessToken();
+		}
+	});
 
 	return (
 		<>
@@ -43,4 +36,12 @@ const App = () => {
 	);
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+	accessToken: state.accessReducer,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	fetchAccessToken: () => dispatch(fetchAccessToken()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
