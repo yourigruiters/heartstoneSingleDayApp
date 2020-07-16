@@ -11,13 +11,25 @@ import HomepageView from "./modules/homepage/Homepage.view";
 import HeroesView from "./modules/heroes/Heroes.view";
 import CardsView from "./modules/cards/Cards.view";
 import DecktrackerView from "./modules/decktracker/Decktracker.view";
-import { fetchAccessToken } from "./redux/actions";
+import { fetchAccessToken, fetchMetaData } from "./redux/actions/index";
 
-const App = ({ accessToken, fetchAccessToken }) => {
+const App = ({ accessToken, fetchAccessToken, metaData, fetchMetaData }) => {
 	React.useEffect(() => {
-		if (!accessToken) {
-			fetchAccessToken();
-		}
+		console.log(metaData);
+		const fetchData = async () => {
+			if (!accessToken) {
+				await fetchAccessToken();
+			}
+			if (
+				Object.keys(metaData).length === 0 &&
+				metaData.constructor === Object
+			) {
+				console.log("Calling fetch with", accessToken);
+				await fetchMetaData(accessToken);
+			}
+		};
+
+		fetchData();
 	});
 
 	return (
@@ -38,10 +50,12 @@ const App = ({ accessToken, fetchAccessToken }) => {
 
 const mapStateToProps = (state) => ({
 	accessToken: state.accessReducer,
+	metaData: state.metadataReducer,
 });
 
 const mapDispatchToProps = (dispatch) => ({
 	fetchAccessToken: () => dispatch(fetchAccessToken()),
+	fetchMetaData: (accessToken) => dispatch(fetchMetaData(accessToken)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

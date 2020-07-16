@@ -1,17 +1,2 @@
-export const setAccessToken = (accessToken) => {
-	return {
-		type: "SET_ACCESS_TOKEN",
-		payload: accessToken,
-	};
-};
-
-export const fetchAccessToken = () => {
-	return (dispatch) => {
-		return fetch("/accesstoken")
-			.then((response) => response.json())
-			.then((data) => {
-				console.log(data);
-				dispatch(setAccessToken(data.accessToken));
-			});
-	};
-};
+export * from "./access";
+export * from "./metadata";

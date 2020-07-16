@@ -53,7 +53,7 @@ const DecktrackerView = ({ match }) => {
 
 	return (
 		<section className="decktrackerView">
-			<Smallbanner title={""} />
+			<Smallbanner title={"third"} />
 			<Decktracker
 				inputValue={inputValue}
 				onChange={setInputValue}

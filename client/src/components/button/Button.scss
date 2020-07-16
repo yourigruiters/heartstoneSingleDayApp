@@ -22,7 +22,7 @@
 
 	&--yellow {
 		border: 2px solid #bda77d;
-		color: $dark-brown;
+		color: $white;
 		background-color: #bda77d;
 		border-left: none;
 		border-top-left-radius: 0px;
@@ -30,7 +30,7 @@
 
 		&:hover {
 			border: 2px solid #bda77d;
-			color: $white;
+			color: $dark-brown;
 			background-color: #bda77d;
 			border-left: none;
 		}

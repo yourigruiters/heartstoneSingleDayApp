@@ -46,14 +46,15 @@ app.get("/api/cardsdata", (req, res) => {
 });
 
 // ALL DATA
-app.get("/api/metadeta", (req, res) => {
-	const accessToken = req.body.accessToken;
+app.get("/api/metadata/:accessToken", (req, res) => {
+	console.log(req.params);
+	const accessToken = req.params.accessToken;
 	const URL = `https://eu.api.blizzard.com/hearthstone/metadata?locale=en_US&access_token=${accessToken}`;
-
+	console.log("Hallo");
 	fetch(URL)
 		.then((res) => res.json())
 		.then((data) => {
-			console.log("Data from API", data);
+			console.log("METADATA FROM BACKEND", data);
 			res.send(data);
 		})
 		.catch((e) => console.log("ERROR IN BACKEND", e));
@@ -69,7 +70,6 @@ app.get("/api/deck/:id/:accessToken", (req, res) => {
 	fetch(URL)
 		.then((res) => res.json())
 		.then((data) => {
-			console.log("Data from API", data);
 			res.send(data);
 		})
 		.catch((e) => console.log("ERROR IN BACKEND", e));

@@ -6,13 +6,14 @@ const Carddisplay = ({ cards }) => {
 	return (
 		<section className="carddisplay">
 			<Container>
-				{cards &&
-					cards.map((card, index) => (
-						<div key={index}>
-							{card.slug}
-							<img src={card.image} alt="card" />
-						</div>
-					))}
+				<section className="carddisplay__content">
+					{cards &&
+						cards.map((card, index) => (
+							<article key={index}>
+								<img src={card.image} alt="card" />
+							</article>
+						))}
+				</section>
 			</Container>
 		</section>
 	);
