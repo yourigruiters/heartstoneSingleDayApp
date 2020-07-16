@@ -3,9 +3,14 @@ import "./Homepage.view.scss";
 import Banner from "./components/banner/Banner";
 import Bannermodes from "./components/bannermodes/Bannermodes";
 import Information from "./components/information/Information";
-import Decktracker from "./components/decktracker/Decktracker";
+import Decktracker from "../../components/decktracker/Decktracker";
 
 const HomepageView = () => {
+	const [inputValue, setInputValue] = React.useState("");
+	const onSubmit = () => {
+		console.log("Haha");
+	};
+
 	const informationData = [
 		{
 			id: 0,
@@ -34,7 +39,11 @@ const HomepageView = () => {
 					<Information information={information} key={index} />
 				))}
 			</section>
-			<Decktracker />
+			<Decktracker
+				inputValue={inputValue}
+				onChange={setInputValue}
+				onSubmit={onSubmit}
+			/>
 		</section>
 	);
 };

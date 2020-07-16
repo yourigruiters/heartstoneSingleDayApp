@@ -21,14 +21,18 @@
 	}
 
 	&--yellow {
-		border: 2px solid $yellow;
-		background-color: #0c1417;
-		color: $yellow;
+		border: 2px solid #bda77d;
+		color: $dark-brown;
+		background-color: #bda77d;
+		border-left: none;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
 
 		&:hover {
-			border: 2px solid $dark-brown;
-			color: $dark-brown;
-			background-color: $yellow;
+			border: 2px solid #bda77d;
+			color: $white;
+			background-color: #bda77d;
+			border-left: none;
 		}
 	}
 }
