@@ -3,9 +3,11 @@ import Smallbanner from "../../components/smallbanner/Smallbanner";
 import "./Cards.view.scss";
 import { connect } from "react-redux";
 import Carddisplay from "../../components/carddisplay/Carddisplay";
+import Spinner from "../../components/spinner/Spinner";
 
 const CardsView = ({ accessToken }) => {
 	const [cardsData, setCardsData] = React.useState([]);
+	const [isLoading, setIsLoading] = React.useState(true);
 	const [error, setError] = React.useState(false);
 
 	React.useEffect(() => {
@@ -16,21 +18,27 @@ const CardsView = ({ accessToken }) => {
 		await fetch(`/api/cardsdata/${accessToken}`, {})
 			.then((response) => response.json())
 			.then((data) => {
-				setError(false);
-				setCardsData(data.cards);
+				setTimeout(() => {
+					setError(false);
+					setCardsData(data.cards);
+					setIsLoading(false);
+				}, 250);
 			})
 			.catch((error) => {
 				setError(true);
 				setCardsData([]);
+				setIsLoading(true);
 			});
 	};
-
-	console.log(error);
 
 	return (
 		<section className="cards">
 			<Smallbanner title={"first"} />
-			<Carddisplay cards={cardsData} />
+			{isLoading ? (
+				<Spinner />
+			) : (
+				<Carddisplay cards={cardsData} error={error} />
+			)}
 		</section>
 	);
 };

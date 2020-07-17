@@ -5,9 +5,11 @@ import Carddisplay from "../../components/carddisplay/Carddisplay";
 import { connect } from "react-redux";
 import Container from "../../components/container/Container";
 import Divider from "../../components/divider/Divider";
+import Spinner from "../../components/spinner/Spinner";
 
 const CardbacksView = ({ accessToken }) => {
 	const [cardsData, setCardsData] = React.useState([]);
+	const [isLoading, setIsLoading] = React.useState(true);
 	const [error, setError] = React.useState(false);
 
 	React.useEffect(() => {
@@ -18,16 +20,18 @@ const CardbacksView = ({ accessToken }) => {
 		await fetch(`/api/cardbacks/${accessToken}`, {})
 			.then((response) => response.json())
 			.then((data) => {
-				setError(false);
-				setCardsData(data.cardBacks);
+				setTimeout(() => {
+					setError(false);
+					setCardsData(data.cardBacks);
+					setIsLoading(false);
+				}, 250);
 			})
 			.catch(() => {
 				setError(true);
 				setCardsData([]);
+				setIsLoading(true);
 			});
 	};
-
-	console.log(error);
 
 	return (
 		<section className="cardbacks">
@@ -43,7 +47,11 @@ const CardbacksView = ({ accessToken }) => {
 				</article>
 				<Divider />
 			</Container>
-			<Carddisplay cards={cardsData} page="cardbacks" />
+			{isLoading ? (
+				<Spinner />
+			) : (
+				<Carddisplay cards={cardsData} page="cardbacks" error={error} />
+			)}
 		</section>
 	);
 };
