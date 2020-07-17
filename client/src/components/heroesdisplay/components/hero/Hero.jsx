@@ -1,5 +1,4 @@
 import React from "react";
-import * as _ from "lodash";
 import "./Hero.scss";
 
 import hero1a from "../../../../utils/images/heroes/demonhunter_static.png";

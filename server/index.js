@@ -6,11 +6,13 @@ const app = express();
 
 const port = 8080;
 
+// Credentials cannot be directly accessed from downloading this application.
 const clientDetails = require("./credentials");
+// const clientDetails = require("./fakeCredentials");
 
 app.use(bodyParser.json());
 
-// [WORKING] Get access token
+// Receive accessToken from Hearthstone API by using credentials
 app.get("/accesstoken", (req, res) => {
 	const URL = `https://eu.battle.net/oauth/token?client_id=${clientDetails.clientId}&client_secret=${clientDetails.clientSecret}`;
 
@@ -26,12 +28,16 @@ app.get("/accesstoken", (req, res) => {
 		.then((res) => res.json())
 		.then((data) => {
 			const accessToken = { accessToken: data.access_token };
-			res.send(accessToken);
+			res.writeHead(200, { "content-type": "application/json" });
+			res.end(JSON.stringify(accessToken));
 		})
-		.catch((e) => console.error("ERROR IN BACKEND", e));
+		.catch((error) => {
+			res.writeHead(400, { "content-type": "application/json" });
+			res.end(JSON.stringify(error));
+		});
 });
 
-// ALL DATA - Can be more specific
+// Recieve specific carddata by defining filters
 app.get("/api/cardsdata/:accessToken", (req, res) => {
 	const accessToken = req.params.accessToken;
 	const URL = `https://us.api.blizzard.com/hearthstone/cards?locale=en_US&order=desc&access_token=${accessToken}`;
@@ -39,24 +45,33 @@ app.get("/api/cardsdata/:accessToken", (req, res) => {
 	fetch(URL)
 		.then((res) => res.json())
 		.then((data) => {
-			console.log("Data from API", data);
-			res.send(data);
+			res.writeHead(200, { "content-type": "application/json" });
+			res.end(JSON.stringify(data));
 		})
-		.catch((e) => console.error("ERROR IN BACKEND", e));
+		.catch((error) => {
+			res.writeHead(400, { "content-type": "application/json" });
+			res.end(JSON.stringify(error));
+		});
 });
 
-// [WORKING] ALL DATA
+// Recieve all Hearthstone metadata
 app.get("/api/metadata/:accessToken", (req, res) => {
 	const accessToken = req.params.accessToken;
 	const URL = `https://eu.api.blizzard.com/hearthstone/metadata?locale=en_US&access_token=${accessToken}`;
 
 	fetch(URL)
 		.then((res) => res.json())
-		.then((data) => res.send(data))
-		.catch((e) => console.error("ERROR IN BACKEND", e));
+		.then((data) => {
+			res.writeHead(200, { "content-type": "application/json" });
+			res.end(JSON.stringify(data));
+		})
+		.catch((error) => {
+			res.writeHead(400, { "content-type": "application/json" });
+			res.end(JSON.stringify(error));
+		});
 });
 
-// [WORKING] SPECIFY DECK CODE
+// Recieve specific deck of cards
 app.get("/api/deck/:id/:accessToken", (req, res) => {
 	const accessToken = req.params.accessToken;
 	const deckId = req.params.id;
@@ -64,19 +79,31 @@ app.get("/api/deck/:id/:accessToken", (req, res) => {
 
 	fetch(URL)
 		.then((res) => res.json())
-		.then((data) => res.send(data))
-		.catch((e) => console.error("ERROR IN BACKEND", e));
+		.then((data) => {
+			res.writeHead(200, { "content-type": "application/json" });
+			res.end(JSON.stringify(data));
+		})
+		.catch((error) => {
+			res.writeHead(400, { "content-type": "application/json" });
+			res.end(JSON.stringify(error));
+		});
 });
 
-// [WORKING] cardbacks
+// Recieve all Hearthstone cardbacks
 app.get("/api/cardbacks/:accessToken", (req, res) => {
 	const accessToken = req.params.accessToken;
 	const URL = `https://eu.api.blizzard.com/hearthstone/cardbacks?access_token=${accessToken}`;
 
 	fetch(URL)
 		.then((res) => res.json())
-		.then((data) => res.send(data))
-		.catch((e) => console.error("ERROR IN BACKEND", e));
+		.then((data) => {
+			res.writeHead(200, { "content-type": "application/json" });
+			res.end(JSON.stringify(data));
+		})
+		.catch((error) => {
+			res.writeHead(400, { "content-type": "application/json" });
+			res.end(JSON.stringify(error));
+		});
 });
 
 app.listen(port, () =>
