@@ -37,6 +37,7 @@ const DecktrackerView = ({ match, accessToken }) => {
 				if (data.cards.length !== 30) {
 					setError(true);
 					setCardsData([]);
+					setIsLoading(false);
 				} else {
 					setTimeout(() => {
 						setError(false);
@@ -48,6 +49,7 @@ const DecktrackerView = ({ match, accessToken }) => {
 			.catch(() => {
 				setError(true);
 				setCardsData([]);
+				setIsLoading(false);
 			});
 	};
 

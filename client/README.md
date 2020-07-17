@@ -1,3 +1,10 @@
-## Hearthstone React Front-end
+# Hearthstone Front-end
 
-Awaiting documentation...
+## Technical implementations
+
+Frontend
+
+- React with Create-react-app
+- React-router-dom, Redux, Redux-thunk
+- Lodash, classnames
+- Eslint

@@ -1,3 +1,9 @@
-## Hearthstone Express Back-end
+# Hearthstone Front-end
 
-Awaiting documentation...
+## Technical implementations
+
+Backend
+
+- Express
+- Node-fetch
+- Body-parser (Wow!)
