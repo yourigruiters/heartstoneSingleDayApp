@@ -79,19 +79,21 @@ const Hero = ({ hero }) => {
 	};
 
 	return (
-		<section className="hero">
+		<>
 			{hero.id !== 12 && (
-				<section className="hero__content">
-					<article className="hero__content__images">
-						<img src={getImage(hero.id)} alt="hero" />
-						<img src={getImage2(hero.id)} alt="hero" />
-					</article>
-					<article className="hero__content__title">
-						<p>{hero.slug === "demonhunter" ? "Demon Hunter" : hero.slug}</p>
-					</article>
+				<section className="hero">
+					<section className="hero__content">
+						<article className="hero__content__images">
+							<img src={getImage(hero.id)} alt="hero" />
+							<img src={getImage2(hero.id)} alt="hero" />
+						</article>
+						<article className="hero__content__title">
+							<p>{hero.slug === "demonhunter" ? "Demon Hunter" : hero.slug}</p>
+						</article>
+					</section>
 				</section>
 			)}
-		</section>
+		</>
 	);
 };
 

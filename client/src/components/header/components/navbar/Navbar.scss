@@ -6,17 +6,30 @@
 	align-items: center;
 
 	&__navlinks {
+		&--mobile {
+			display: none;
+
+			@media (min-width: 625px) {
+				display: block;
+			}
+		}
+
 		ul {
 			display: flex;
 			list-style-type: none;
 
 			li {
-				font-size: 18px;
+				font-size: 14px;
+				line-height: 40px;
 				font-family: $font-source;
 				font-weight: bold;
 				letter-spacing: 0.5px;
 				color: $white;
 				padding: 10px;
+
+				@media (min-width: 625px) {
+					font-size: 18px;
+				}
 			}
 		}
 

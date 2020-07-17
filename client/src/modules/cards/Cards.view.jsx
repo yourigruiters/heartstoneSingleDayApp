@@ -4,6 +4,7 @@ import "./Cards.view.scss";
 import { connect } from "react-redux";
 import Carddisplay from "../../components/carddisplay/Carddisplay";
 import Spinner from "../../components/spinner/Spinner";
+import Intro from "../../components/intro/Intro";
 
 const CardsView = ({ accessToken }) => {
 	const [cardsData, setCardsData] = React.useState([]);
@@ -34,6 +35,10 @@ const CardsView = ({ accessToken }) => {
 	return (
 		<section className="cards">
 			<Smallbanner title={"first"} />
+			<Intro
+				title="Cards"
+				description="We have made 100 Hearthstone cards available for you to navigate through in this demo of the cards page. In the future this will extend to all cards with different filter options."
+			/>
 			{isLoading ? (
 				<Spinner />
 			) : (

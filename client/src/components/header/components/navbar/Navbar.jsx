@@ -7,7 +7,7 @@ const Navbar = () => {
 		<section className="navbar">
 			<article className="navbar__navlinks">
 				<ul>
-					<NavLink to="/" exact>
+					<NavLink to="/" exact className="navbar__navlinks--mobile">
 						<li>Homepage</li>
 					</NavLink>
 					<NavLink to="/heroes" exact>

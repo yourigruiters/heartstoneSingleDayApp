@@ -40,7 +40,7 @@ app.get("/accesstoken", (req, res) => {
 // Recieve specific carddata by defining filters
 app.get("/api/cardsdata/:accessToken", (req, res) => {
 	const accessToken = req.params.accessToken;
-	const URL = `https://us.api.blizzard.com/hearthstone/cards?locale=en_US&order=desc&access_token=${accessToken}`;
+	const URL = `https://us.api.blizzard.com/hearthstone/cards?locale=en_US&page=2&pageSize=100&order=desc&access_token=${accessToken}`;
 
 	fetch(URL)
 		.then((res) => res.json())
