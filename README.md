@@ -21,6 +21,18 @@ Backend
 - Node-fetch
 - Body-parser (Wow!)
 
-#### Landing page
+Styling
+
+- Flexbox
+- Mobile first responsive
+- CSS animations and effects
+
+#### Wanted but missed opportunities
+
+- Authentication/login to store deck searches
+- Card filtering options (Was supposed to be a must)
+- CSS animations and effects
+
+##### Landing page
 
 ![HeartstoneTracker](github.JPG)
