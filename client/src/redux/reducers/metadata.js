@@ -1,11 +1,10 @@
 const initialState = {};
 
 export const metadataReducer = (state = initialState, action) => {
-	switch (action.type) {
-		case "SET_METADATA":
-			const newState = action.payload;
-			return newState;
-		default:
-			return state;
-	}
+  switch (action.type) {
+    case "SET_METADATA":
+      return action.payload;
+    default:
+      return state;
+  }
 };

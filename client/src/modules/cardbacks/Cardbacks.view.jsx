@@ -5,54 +5,58 @@ import Carddisplay from "../../components/carddisplay/Carddisplay";
 import { connect } from "react-redux";
 import Spinner from "../../components/spinner/Spinner";
 import Intro from "../../components/intro/Intro";
+import PropTypes from "prop-types";
 
 const CardbacksView = ({ accessToken }) => {
-	const [cardsData, setCardsData] = React.useState([]);
-	const [isLoading, setIsLoading] = React.useState(true);
-	const [error, setError] = React.useState(false);
+  const [cardsData, setCardsData] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
 
-	React.useEffect(() => {
-		getCardbacks();
-	}, [accessToken]);
+  React.useEffect(() => {
+    getCardbacks();
+  }, [accessToken]);
 
-	const getCardbacks = async () => {
-		await fetch(`/api/cardbacks/${accessToken}`, {})
-			.then((response) => response.json())
-			.then((data) => {
-				setTimeout(() => {
-					setError(false);
-					setCardsData(data.cardBacks);
-					setIsLoading(false);
-				}, 250);
-			})
-			.catch(() => {
-				setError(true);
-				setCardsData([]);
-				setIsLoading(true);
-			});
-	};
+  const getCardbacks = async () => {
+    await fetch(`/api/cardbacks/${accessToken}`, {})
+      .then((response) => response.json())
+      .then((data) => {
+        setTimeout(() => {
+          setError(false);
+          setCardsData(data.cardBacks);
+          setIsLoading(false);
+        }, 250);
+      })
+      .catch(() => {
+        setError(true);
+        setCardsData([]);
+        setIsLoading(true);
+      });
+  };
 
-	return (
-		<section className="cardbacks">
-			<Smallbanner title={"fourth"} />
-			<Intro
-				title="Cardbacks"
-				description="Below you can find all cardbacks that have been in play since the
+  return (
+    <section className="cardbacks">
+      <Smallbanner title={"fourth"} />
+      <Intro
+        title="Cardbacks"
+        description="Below you can find all cardbacks that have been in play since the
 				start of Hearthstone. Hovering over a cardback will provide you with
 				the description of the respective cardback."
-			/>
-			{isLoading ? (
-				<Spinner />
-			) : (
-				<Carddisplay cards={cardsData} page="cardbacks" error={error} />
-			)}
-		</section>
-	);
+      />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <Carddisplay cards={cardsData} page="cardbacks" error={error} />
+      )}
+    </section>
+  );
+};
+
+CardbacksView.propTypes = {
+  accessToken: PropTypes.string
 };
 
 const mapStateToProps = (state) => ({
-	accessToken: state.accessReducer,
-	metaData: state.metadataReducer,
+  accessToken: state.accessReducer
 });
 
 export default connect(mapStateToProps)(CardbacksView);

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Hero.scss";
+import PropTypes from "prop-types";
 
 import hero1a from "../../../../utils/images/heroes/demonhunter_static.png";
 import hero2a from "../../../../utils/images/heroes/druid_static.png";
@@ -24,77 +25,81 @@ import hero9b from "../../../../utils/images/heroes/warlock_hover.png";
 import hero10b from "../../../../utils/images/heroes/warrior_hover.png";
 
 const Hero = ({ hero }) => {
-	const getImage = (index) => {
-		switch (index) {
-			case 14:
-				return hero1a;
-			case 2:
-				return hero2a;
-			case 3:
-				return hero3a;
-			case 4:
-				return hero4a;
-			case 5:
-				return hero5a;
-			case 6:
-				return hero6a;
-			case 7:
-				return hero7a;
-			case 8:
-				return hero8a;
-			case 9:
-				return hero9a;
-			case 10:
-				return hero10a;
-			default:
-				return "";
-		}
-	};
+  const getImage = (index) => {
+    switch (index) {
+      case 14:
+        return hero1a;
+      case 2:
+        return hero2a;
+      case 3:
+        return hero3a;
+      case 4:
+        return hero4a;
+      case 5:
+        return hero5a;
+      case 6:
+        return hero6a;
+      case 7:
+        return hero7a;
+      case 8:
+        return hero8a;
+      case 9:
+        return hero9a;
+      case 10:
+        return hero10a;
+      default:
+        return "";
+    }
+  };
 
-	const getImage2 = (index) => {
-		switch (index) {
-			case 14:
-				return hero1b;
-			case 2:
-				return hero2b;
-			case 3:
-				return hero3b;
-			case 4:
-				return hero4b;
-			case 5:
-				return hero5b;
-			case 6:
-				return hero6b;
-			case 7:
-				return hero7b;
-			case 8:
-				return hero8b;
-			case 9:
-				return hero9b;
-			case 10:
-				return hero10b;
-			default:
-				return "";
-		}
-	};
+  const getImage2 = (index) => {
+    switch (index) {
+      case 14:
+        return hero1b;
+      case 2:
+        return hero2b;
+      case 3:
+        return hero3b;
+      case 4:
+        return hero4b;
+      case 5:
+        return hero5b;
+      case 6:
+        return hero6b;
+      case 7:
+        return hero7b;
+      case 8:
+        return hero8b;
+      case 9:
+        return hero9b;
+      case 10:
+        return hero10b;
+      default:
+        return "";
+    }
+  };
 
-	return (
-		<>
-			{hero.id !== 12 && (
-				<section className="hero">
-					<section className="hero__content">
-						<article className="hero__content__images">
-							<img src={getImage(hero.id)} alt="hero" />
-							<img src={getImage2(hero.id)} alt="hero" />
-						</article>
-						<article className="hero__content__title">
-							<p>{hero.slug === "demonhunter" ? "Demon Hunter" : hero.slug}</p>
-						</article>
-					</section>
-				</section>
-			)}
-		</>
-	);
+  return (
+    <>
+      {hero.id !== 12 && (
+        <section className="hero">
+          <section className="hero__content">
+            <article className="hero__content__images">
+              <img src={getImage(hero.id)} alt="hero" />
+              <img src={getImage2(hero.id)} alt="hero" />
+            </article>
+            <article className="hero__content__title">
+              <p>{hero.slug === "demonhunter" ? "Demon Hunter" : hero.slug}</p>
+            </article>
+          </section>
+        </section>
+      )}
+    </>
+  );
+};
+
+Hero.propTypes = {
+  hero: PropTypes.any
 };
 
 export default Hero;
